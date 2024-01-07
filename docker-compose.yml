@@ -21,9 +21,11 @@ services:
     environment:
       - NODE_ENV=development
       - PORT=${SERVER_PORT}
-      - DB_HOST=postgres
+      - DB_HOST=db
+      - DB_NAME=${DB_NAME}
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
+      - DB_URL=${DB_URL}
     depends_on:
       - db
 

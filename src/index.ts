@@ -1,14 +1,14 @@
 import express, { Express, Request, Response } from 'express';
-import dotenv from 'dotenv';
+import cors from 'cors';
 import morgan from 'morgan';
-
-dotenv.config();
+import 'dotenv/config';
 
 const app: Express = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors({ credentials: false }));
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
